@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PelisPlus </title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">C</div>
+      <nav class="nav">
+        <button class="icon">🏠</button>
+        <button class="icon">🔎</button>
+        <button class="icon">⭐</button>
+      </nav>
+      <div style="flex:1"></div>
+      <nav class="nav">
+        <button class="icon">⚙️</button>
+        <button class="icon">👤</button>
+      </nav>
+    </aside>
+
+    <div class="divider"></div>
+
+    <main class="main">
+      <header>
+        <h2>PelisPlus</h2>
+        <div class="search-wrap">
+          <input id="search" class="search" placeholder="Buscar película, actor o personaje...">
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+        <div class="controls">
+          <div class="dropdown">
+            <button class="btn small transparent" id="menuBtn">Menú ▾</button>
+            <div class="dropdown-menu" id="menuDropdown">
+              <div class="menu-item">Ver todo</div>
+              <div class="menu-item">Filtrar por género</div>
+              <div class="menu-item">Preferencias</div>
+            </div>
+          </div>
+          <button class="btn small transparent">Iniciar sesión</button>
+          <button class="btn small transparent">Registrarse</button>
+        </div>
+      </header>
+
+      <section class="movies-row">
+        <div class="row-title">
+          <img src="p.png" alt="Logotipo" width="50" height="50">
+          <div class="chips" id="genreChips"></div>
+        </div>
+        <div class="carousel" id="moviesCarousel"></div>
+      </section>
+
+      <section class="bottom-controls">
+        <div class="muted">Sugerencias generadas según género y actores.</div>
+        <div>
+          <button class="btn small transparent" id="leftScroll">◀</button>
+          <button class="btn small transparent" id="rightScroll">▶</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="movie-modal" class="modal">
+    <div class="modal-content">
+      <div class="movie-background" id="movieBackground">
+        <div class="movie-overlay"></div>
+        <div class="movie-left">
+          <div class="modal-header">
+            <div>
+              <h2 id="modal-title"></h2>
+              <div class="muted" id="modal-rank"></div>
+            </div>
+            <button class="close-btn">✕</button>
+          </div>
+          <p id="modal-description" class="muted"></p>
+          <div class="movie-actions">
+            <button class="play">Reproducir</button>
+            <button class="fav">+ Lista</button>
+            <button class="fav">Favoritos</button>
+          </div>
+        </div>
+        <div class="movie-right">
+          <h4>Recomendadas</h4>
+          <div class="recommended-movies" id="recommendedContainer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="JavaScript.js"></script>
+
+</body>
+</html>
